@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prediction of US Yellowstone National Park Old Faithful Geyser's eruption duration</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Prediction of US Yellowstone National Park Old Faithful Geyser's eruption duration">
+  <meta name="author" content="spidy001">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Prediction of US Yellowstone National Park Old Faithful Geyser's eruption duration</h1>
+    <h2></h2>
+    <p>spidy001<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This is an interactive data product developed as part of my course Developing 
+Data Products during Coursera&#39;s John Hopkins Data Science specialization.</p>
+
+<p>Tools Used - This application was developed using R - a programming 
+language for statistical computing and graphics, Shiny -a web framework for R 
+to develop interactive web applications , Slidify - a tool that makes it easy 
+to create , customize and publish reproducible HTML5 slide decks using R 
+Markdowns.R markdown is  way of combining code and documentation in a one single 
+document to produce dynamic documents,presentations and reports from R.</p>
+
+<p>Shiny Application -This program expects the user to input data for Geyser wait 
+time and wait time units. wait time is a numeric value  which can be typed in the
+text box provided or can be selected using up/down arrow keys on the control.
+Wait time units can be either Minutes or Seconds and can be entered using the 
+drop down provided. By default the application selects a value of 80 minutes for 
+wait time and predicts the eruption duration. Users can re-run the program with 
+a different wait time and Click the Submit button to see the new predicted value.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Data Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Data Used to develop Prediction Algorithm - For this application a dataset 
+called &quot;faithful&quot; from R&#39;s built in package datasets was used.This dataset has 
+data specific to U.S.A&#39;s Yellowstone National Park&#39;s Old faithful Geyser.
+This dataset shows two variables eruptions and waiting. waiting is the wait time 
+between Geyser&#39;s eruptions.eruptions is the eruption duration after the specified 
+wait time. Both these variables are mentioned in minutes in the datset.
+Sample of this data can be found below</p>
+
+<pre><code>##   eruptions waiting
+## 1     3.600      79
+## 2     1.800      54
+## 3     3.333      74
+## 4     2.283      62
+## 5     4.533      85
+## 6     2.883      55
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Historic Data Plots</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Application Details</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Based on the historic data in faithful dataset - plots and data presented in the above two slides,a correlation between wait time and eruption duration was observed and Hence a linear regression model was built using this data
+to predict Geyser eruption duration.</p>
+
+<p>This shiny application applies the model built to predict the Geyser&#39;s eruption duration based on the user entered wait time &amp; wait time units. </p>
+
+<p>The interactive output is presented in two tabs. First tab has interactive textoutput with the 
+prediction results. Second tab shows the historic data used to develop the prediction algorithm.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Results</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Based on the default wait time of 80 minutes the application produced the 
+following output in the first tab.</p>
+
+<p>You have entered a Geyser wait time of 80   Minutes .
+Based on your input,the Geyser is expected to erupt  for the duration of 4.17622 minutes </p>
+
+<p>The final application has been published to the shiny server and is 
+available at the  link  <a href="https://spidy001.shinyapps.io/Project/">https://spidy001.shinyapps.io/Project/</a><br>
+Also all related shiny application code has been deployed to github. 
+The links can be found below.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Data Summary'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Historic Data Plots'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Application Details'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Results'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='NA'>
+         6
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

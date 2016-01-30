@@ -1,18 +1,18 @@
 ---
+
 title: "Prediction of US Yellowstone National Park Old Faithful Geyser's eruption duration"
 author: "spidy001"
 highlighter: highlight.js
-output: pdf_document
-job: null
+output: slidy_presentation
 knit: slidify::knit2slides
 mode: selfcontained
 hitheme: tomorrow
 subtitle: null
-framework: io2012
 widgets: []
 
 ---
 ## Introduction
+
 This is an interactive data product developed as part of my course Developing 
 Data Products during Coursera's John Hopkins Data Science specialization.
 
@@ -27,10 +27,12 @@ time and wait time units. wait time is a numeric value  which can be typed in th
 
 --- 
 ## Data Summary 
+
 Data Used to develop Prediction Algorithm - For this application a dataset 
 called "faithful" from R's built in package datasets was used.This dataset has 
 data specific to U.S.A's Yellowstone National Park's Old faithful Geyser.
 This dataset shows two variables eruptions and waiting. waiting is the wait time between Geyser's eruptions.eruptions is the eruption duration after the specified wait time. Both these variables are mentioned in minutes in the datset.Sample of this data can be found below
+
 
 ```
 ##   eruptions waiting
@@ -44,21 +46,16 @@ This dataset shows two variables eruptions and waiting. waiting is the wait time
 
 ---
 ## Historic Data Plots
+
 ![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2-1.png)
 
 ---
 ## Application Details
 Based on the historic data in faithful dataset - plots and data presented in the above two slides,a correlation between wait time and eruption duration was observed and Hence a linear regression model was built using this data
-to predict Geyser eruption duration.
-
-This shiny application applies the model built to predict the Geyser's eruption duration based on the user entered wait time & wait time units. 
-
-The interactive output is presented in two tabs. First tab has interactive textoutput with the 
-prediction results. Second tab shows the historic data used to develop the prediction algorithm.
+to predict Geyser eruption duration.This shiny application applies the model built to predict the Geyser's eruption duration based on the user entered wait time & wait time units. The interactive output is presented in two tabs. First tab has interactive textoutput with the prediction results. Second tab shows the historic data used to develop the prediction algorithm.
 
 ---
 ## Results
-
 Based on the default wait time of 80 minutes the application produced the 
 following output in the first tab.
  
@@ -68,7 +65,7 @@ Based on your input,the Geyser is expected to erupt  for the duration of 4.17622
 
 The final application has been published to the shiny server and is 
 available at the  link  https://spidy001.shinyapps.io/Project/   
-Also all related shiny application code has been deployed to github. 
-The links can be found below.
+Also all related shiny application code has been deployed is available 
+on github at 
 https://github.com/spidy001/ShinyApplication
----
+

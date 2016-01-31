@@ -26,28 +26,26 @@ Shiny Application -This program expects the user to input data for Geyser wait
 time and wait time units. wait time is a numeric value  which can be typed in the text box provided or can be selected using up/down arrow keys on the control.Wait time units can be either Minutes or Seconds and can be entered using the drop down provided. By default the application selects a value of 80 minutes for wait time and predicts the eruption duration. Users can re-run the program with a different wait time and Click the Submit button to see the new predicted value.
 
 --- 
-## Data Summary 
+## Code Snippets
 
-Data Used to develop Prediction Algorithm - For this application a dataset 
-called "faithful" from R's built in package datasets was used.This dataset has 
-data specific to U.S.A's Yellowstone National Park's Old faithful Geyser.
-This dataset shows two variables eruptions and waiting. waiting is the wait time between Geyser's eruptions.eruptions is the eruption duration after the specified wait time. Both these variables are mentioned in minutes in the datset.Sample of this data can be found below
-
-
+```r
+library(shiny)
+        numericInput('wait', 'Enter geyser waiting time till next eruption',
+                                     80 , min = 45, max = 5000, step = 1)
+        selectInput("waitingTimeUnit", "Units:",
+                                    c("Minutes" = "Minutes",
+                                      "Seconds" = "Seconds"))
+        output$prediction <- renderPrint({
+                     cat("\n","You have entered a Geyser wait time of",
+                             input$wait," ",input$waitingTimeUnit,".\n",
+                         "Based on your input,the Geyser is expected to erupt ",
+                        "for the duration of",
+                      eruptionPredictor(waitingTime())
+                      ," minutes ")
+                })
 ```
-##   eruptions waiting
-## 1     3.600      79
-## 2     1.800      54
-## 3     3.333      74
-## 4     2.283      62
-## 5     4.533      85
-## 6     2.883      55
-```
 
----
-## Historic Data Plots
 
-![plot of chunk unnamed-chunk-2](assets/fig/unnamed-chunk-2-1.png)
 
 ---
 ## Application Details

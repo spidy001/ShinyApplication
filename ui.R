@@ -1,4 +1,5 @@
 library(shiny)
+library(knitr)
 shinyUI(
         pageWithSidebar(
                 # Application title
@@ -13,11 +14,17 @@ shinyUI(
                         submitButton('Submit')
                 ),
                 mainPanel(
+                        
                         tabsetPanel(
                         tabPanel("Prediction Results",
                                        verbatimTextOutput("prediction")
                                  ),
-                        tabPanel("Historic Data Plot",plotOutput("plot")))
+                        tabPanel("Html Documentaion",
+                                 HTML(knitr::knit2html(text = readLines(normalizePath('index.Rmd')), 
+                                                       fragment.only = TRUE)))
+                        )
+                        )
+                        )
                 )
-        )
-)
+        
+
